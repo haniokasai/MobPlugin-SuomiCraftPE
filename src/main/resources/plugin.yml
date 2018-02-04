@@ -1,0 +1,20 @@
+name: MobPlugin
+main: de.kniffo80.mobplugin.MobPlugin
+version: "1.0"
+api: ["1.0.0"]
+
+load: STARTUP
+author: PetteriM1
+description: Mob plugin for Nukkit
+
+commands:
+  mob:
+    description: MobPlugin main command
+    aliases: ["mob"]
+    usage: /mob
+    permission: mobplugin.command
+
+permissions:
+  novamobs.mob:
+    description: ""
+    default: op
