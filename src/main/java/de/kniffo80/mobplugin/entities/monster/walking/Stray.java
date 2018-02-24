@@ -51,12 +51,12 @@ public class Stray extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.65f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.99f;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Stray extends WalkingMonster {
 
     @Override
     public void attackEntity(Entity player) {
-	  return;
+	return;
     }
 
     @Override

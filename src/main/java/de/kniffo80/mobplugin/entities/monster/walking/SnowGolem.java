@@ -37,12 +37,12 @@ public class SnowGolem extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.6f;
+        return 0.7f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.9f;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class SnowGolem extends WalkingMonster {
         List<Item> drops = new ArrayList<>();
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
             int snowBall = Utils.rand(0, 16);
-            for (int i=0; i < snowBall; i++) {
+            for (int i = 0; i < snowBall; i++) {
                 drops.add(Item.get(Item.SNOWBALL, 0, 1));
             }
         }
@@ -111,7 +111,7 @@ public class SnowGolem extends WalkingMonster {
     }
 
     @Override
-    public int getKillExperience () {
+    public int getKillExperience() {
         return 0;
     }
 

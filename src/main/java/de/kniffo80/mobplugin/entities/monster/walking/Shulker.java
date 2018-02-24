@@ -9,7 +9,7 @@ import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
 public class Shulker extends WalkingMonster {
 
     public static final int NETWORK_ID = 54;
-            
+
     public Shulker(FullChunk chunk, CompoundTag nbt) {
         super(chunk, nbt);
     }
@@ -18,12 +18,12 @@ public class Shulker extends WalkingMonster {
     public int getNetworkId() {
         return NETWORK_ID;
     }
-    
+
     @Override
     public String getName() {
         return "Shulker";
     }
-    
+
     @Override
     public float getWidth() {
         return 1f;
@@ -45,10 +45,10 @@ public class Shulker extends WalkingMonster {
     @Override
     public void attackEntity(Entity player) {
     }
-    
+
     @Override
     public int getKillExperience() {
         return 5;
     }
-    
+
 }

@@ -4,27 +4,40 @@ import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
+import cn.nukkit.level.generator.biome.Biome;
 import cn.nukkit.utils.Config;
 import de.kniffo80.mobplugin.AutoSpawnTask;
-import de.kniffo80.mobplugin.entities.animal.jumping.Rabbit;
 import de.kniffo80.mobplugin.entities.autospawn.AbstractEntitySpawner;
 import de.kniffo80.mobplugin.entities.autospawn.SpawnResult;
+import de.kniffo80.mobplugin.entities.monster.flying.Ghast;
 
-public class RabbitSpawner extends AbstractEntitySpawner {
+/**
+ * @author PikyCZ
+ */
+public class GhastSpawner extends AbstractEntitySpawner {
 
-    public RabbitSpawner(AutoSpawnTask spawnTask, Config pluginConfig) {
+    public GhastSpawner(AutoSpawnTask spawnTask, Config pluginConfig) {
         super(spawnTask, pluginConfig);
     }
 
+    @Override
+    protected String getLogprefix() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
     public SpawnResult spawn(IPlayer iPlayer, Position pos, Level level) {
         SpawnResult result = SpawnResult.OK;
 
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
-        int blockLightLevel = level.getBlockLightAt((int) pos.x, (int) pos.y, (int) pos.z);
-        if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {
-            result = SpawnResult.POSITION_MISMATCH;
+        int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
+
+        if (Block.transparent[blockId]) { // only spawns on opaque blocks
+            result = SpawnResult.WRONG_BLOCK;
+        } else if (biomeId != Biome.HELL) {
+            result = SpawnResult.WRONG_BLOCK;
         } else {
-            this.spawnTask.createEntity(getEntityName(), pos.add(0, 1.75, 0));
+            this.spawnTask.createEntity(getEntityName(), pos.add(0, 2.3, 0));
         }
 
         return result;
@@ -32,17 +45,12 @@ public class RabbitSpawner extends AbstractEntitySpawner {
 
     @Override
     public int getEntityNetworkId() {
-        return Rabbit.NETWORK_ID;
+        return Ghast.NETWORK_ID;
     }
 
     @Override
     public String getEntityName() {
-        return "Rabbit";
-    }
-
-    @Override
-    protected String getLogprefix() {
-        return this.getClass().getSimpleName();
+        return "Ghast";
     }
 
 }

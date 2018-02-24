@@ -38,12 +38,12 @@ public class Wolf extends TameableMonster {
 
     @Override
     public float getWidth() {
-        return 0.72f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 0.9f;
+        return 0.85f;
     }
 
     @Override

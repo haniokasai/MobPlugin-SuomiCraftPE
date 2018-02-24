@@ -23,13 +23,13 @@ import java.util.List;
 
 public class Creeper extends WalkingMonster implements EntityExplosive {
 
-    public static final int NETWORK_ID   = 33;
+    public static final int NETWORK_ID = 33;
 
     public static final int DATA_POWERED = 19;
 
-    private int             bombTime     = 0;
+    private int bombTime = 0;
 
-    private boolean         exploded     = false;
+    private boolean exploded = false;
 
     public Creeper(FullChunk chunk, CompoundTag nbt) {
         super(chunk, nbt);
@@ -42,12 +42,12 @@ public class Creeper extends WalkingMonster implements EntityExplosive {
 
     @Override
     public float getWidth() {
-        return 0.72f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.7f;
     }
 
     @Override
@@ -211,7 +211,7 @@ public class Creeper extends WalkingMonster implements EntityExplosive {
         }
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
             int gunPowder = Utils.rand(0, 3);
-            for (int i=0; i < gunPowder; i++) {
+            for (int i = 0; i < gunPowder; i++) {
                 drops.add(Item.get(Item.GUNPOWDER, 0, 1));
             }
         }
@@ -219,7 +219,7 @@ public class Creeper extends WalkingMonster implements EntityExplosive {
     }
 
     @Override
-    public int getKillExperience () {
+    public int getKillExperience() {
         return 5;
     }
 

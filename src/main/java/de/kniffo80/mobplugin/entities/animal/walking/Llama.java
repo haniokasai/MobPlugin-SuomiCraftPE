@@ -1,7 +1,6 @@
 package de.kniffo80.mobplugin.entities.animal.walking;
 
 import cn.nukkit.entity.Entity;
-import cn.nukkit.entity.EntityRideable;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
@@ -24,7 +23,7 @@ public class Llama extends WalkingAnimal {
     public int getNetworkId() {
         return NETWORK_ID;
     }
-    
+
     @Override
     public String getName() {
         return "Llama";
@@ -53,7 +52,7 @@ public class Llama extends WalkingAnimal {
         }
         return 1.2f;
     }
-    
+
     @Override
     public boolean isBaby() {
         return this.getDataFlag(DATA_FLAGS, Entity.DATA_FLAG_BABY);

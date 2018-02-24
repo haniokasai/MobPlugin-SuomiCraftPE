@@ -45,12 +45,12 @@ public class Skeleton extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.65f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.99f;
     }
 
     public void attackEntity(Entity player) {
@@ -121,10 +121,10 @@ public class Skeleton extends WalkingMonster {
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
             int bones = Utils.rand(0, 3);
             int arrows = Utils.rand(0, 3);
-            for (int i=0; i < bones; i++) {
+            for (int i = 0; i < bones; i++) {
                 drops.add(Item.get(Item.BONE, 0, 1));
             }
-            for (int i=0; i < arrows; i++) {
+            for (int i = 0; i < arrows; i++) {
                 drops.add(Item.get(Item.ARROW, 0, 1));
             }
         }
@@ -132,7 +132,7 @@ public class Skeleton extends WalkingMonster {
     }
 
     @Override
-    public int getKillExperience () {
+    public int getKillExperience() {
         return 5;
     }
 

@@ -26,7 +26,7 @@ public class Silverfish extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.45f;
+        return 0.4f;
     }
 
     @Override

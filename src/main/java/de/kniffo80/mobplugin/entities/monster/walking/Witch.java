@@ -20,7 +20,7 @@ import de.kniffo80.mobplugin.utils.Utils;
 
 public class Witch extends WalkingMonster {
 
-    public static final int  NETWORK_ID   = 45;
+    public static final int NETWORK_ID = 45;
 
     private static final int ATTACK_TICKS = 20;
 
@@ -35,12 +35,12 @@ public class Witch extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.72f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.95f;
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Witch extends WalkingMonster {
     @Override
     public void attackEntity(Entity player) {
         if (MobPlugin.MOB_AI_ENABLED) {
-            if (this.attackDelay > ATTACK_TICKS && this.distanceSquared(player) <= 9) {
+            if (this.attackDelay > ATTACK_TICKS && this.distanceSquared(player) <= 8) {
                 this.attackDelay = 0;
                 if (player.isAlive() && !player.closed) {
 
@@ -106,7 +106,7 @@ public class Witch extends WalkingMonster {
                     }
                 }
             } else {
-                this.attackDelay ++;
+                this.attackDelay++;
             }
         }
     }

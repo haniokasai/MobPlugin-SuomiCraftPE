@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package de.kniffo80.mobplugin.entities.monster.jumping;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Enderman extends WalkingMonster {
+public class MagmaCube extends WalkingMonster {
 
-    public static final int NETWORK_ID = 38;
+    public static final int NETWORK_ID = 42;
 
-    public Enderman(FullChunk chunk, CompoundTag nbt) {
+    public MagmaCube(FullChunk chunk, CompoundTag nbt) {
         super(chunk, nbt);
     }
 
@@ -29,24 +29,29 @@ public class Enderman extends WalkingMonster {
 
     @Override
     public float getWidth() {
-        return 0.6f;
+        return 2.04f;
     }
 
     @Override
     public float getHeight() {
-        return 2.9f;
+        return 2.04f;
     }
 
     @Override
     public double getSpeed() {
-        return 1.21;
+        return 1.0;
+    }
+
+    @Override
+    public int getMaxJumpHeight() {
+        return 2;
     }
 
     protected void initEntity() {
-        this.setMaxHealth(40);
+        this.setMaxHealth(16);
         super.initEntity();
 
-        this.setDamage(new int[] { 0, 4, 7, 10 });
+        this.setDamage(new int[] { 0, 2, 3, 4 });
     }
 
     public void attackEntity(Entity player) {
@@ -99,9 +104,9 @@ public class Enderman extends WalkingMonster {
     public Item[] getDrops() {
         List<Item> drops = new ArrayList<>();
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
-            int enderPearls = Utils.rand(0, 2);
-            for (int i = 0; i < enderPearls; i++) {
-                drops.add(Item.get(Item.ENDER_PEARL, 0, 1));
+            int magmaCream = Utils.rand(0, 2);
+            for (int i = 0; i < magmaCream; i++) {
+                drops.add(Item.get(Item.MAGMA_CREAM, 0, 1));
             }
         }
         return drops.toArray(new Item[drops.size()]);
@@ -109,7 +114,7 @@ public class Enderman extends WalkingMonster {
 
     @Override
     public int getKillExperience () {
-        return 5;
+        return 4;
     }
 
 }

@@ -39,10 +39,12 @@ import cn.nukkit.utils.Config;
 import cn.nukkit.utils.DyeColor;
 import de.kniffo80.mobplugin.entities.BaseEntity;
 import de.kniffo80.mobplugin.entities.animal.flying.*;
+import de.kniffo80.mobplugin.entities.animal.jumping.Rabbit;
 import de.kniffo80.mobplugin.entities.animal.swimming.Squid;
 import de.kniffo80.mobplugin.entities.animal.walking.*;
 import de.kniffo80.mobplugin.entities.block.BlockEntitySpawner;
 import de.kniffo80.mobplugin.entities.monster.flying.*;
+import de.kniffo80.mobplugin.entities.monster.jumping.*;
 import de.kniffo80.mobplugin.entities.monster.swimming.*;
 import de.kniffo80.mobplugin.entities.monster.walking.*;
 import de.kniffo80.mobplugin.entities.projectile.EntityFireBall;
@@ -167,6 +169,7 @@ public class MobPlugin extends PluginBase implements Listener {
         Entity.registerEntity(Cow.class.getSimpleName(), Cow.class);
         Entity.registerEntity(Donkey.class.getSimpleName(), Donkey.class);
         Entity.registerEntity(Horse.class.getSimpleName(), Horse.class);
+        Entity.registerEntity(MagmaCube.class.getSimpleName(), MagmaCube.class);
         Entity.registerEntity(Llama.class.getSimpleName(), Llama.class);
         Entity.registerEntity(Mooshroom.class.getSimpleName(), Mooshroom.class);
         Entity.registerEntity(Mule.class.getSimpleName(), Mule.class);
@@ -197,6 +200,7 @@ public class MobPlugin extends PluginBase implements Listener {
         Entity.registerEntity(Shulker.class.getSimpleName(), Shulker.class);
         Entity.registerEntity(Silverfish.class.getSimpleName(), Silverfish.class);
         Entity.registerEntity(Skeleton.class.getSimpleName(), Skeleton.class);
+        Entity.registerEntity(Slime.class.getSimpleName(), Slime.class);
         Entity.registerEntity(SnowGolem.class.getSimpleName(), SnowGolem.class);
         Entity.registerEntity(Spider.class.getSimpleName(), Spider.class);
         Entity.registerEntity(Stray.class.getSimpleName(), Stray.class);

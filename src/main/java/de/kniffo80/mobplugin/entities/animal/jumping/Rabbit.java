@@ -1,6 +1,7 @@
-package de.kniffo80.mobplugin.entities.animal.walking;
+package de.kniffo80.mobplugin.entities.animal.jumping;
 
 import cn.nukkit.Player;
+import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityCreature;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
@@ -27,17 +28,28 @@ public class Rabbit extends WalkingAnimal {
 
     @Override
     public float getWidth() {
+        if (this.isBaby()) {
+            return 0.2f;
+        }
         return 0.4f;
     }
 
     @Override
     public float getHeight() {
-        return 0.75f;
+        if (this.isBaby()) {
+            return 0.25f;
+        }
+        return 0.5f;
     }
 
     @Override
     public double getSpeed() {
         return 1.2;
+    }
+
+    @Override
+    public boolean isBaby() {
+        return this.getDataFlag(DATA_FLAGS, Entity.DATA_FLAG_BABY);
     }
 
     public void initEntity() {
@@ -56,14 +68,21 @@ public class Rabbit extends WalkingAnimal {
 
     @Override
     public Item[] getDrops() {
+        if (this.isBaby()) {
+
+        }
         List<Item> drops = new ArrayList<>();
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
             int rabbitHide = Utils.rand(0, 2);
             int rawRabbit = Utils.rand(0, 2);
-            for (int i=0; i < rabbitHide; i++) {
+            int rabbitfoot = Utils.rand(0, 101) <= 9 ? 1 : 0;
+            for (int i = 0; i < rabbitHide; i++) {
                 drops.add(Item.get(Item.RABBIT_HIDE, 0, 1));
             }
-            for (int i=0; i < rawRabbit; i++) {
+            for (int i = 0; i < rabbitfoot; i++) {
+                drops.add(Item.get(Item.RABBIT_FOOT, 0, 1));
+            }
+            for (int i = 0; i < rawRabbit; i++) {
                 drops.add(Item.get(this.isOnFire() ? Item.COOKED_RABBIT : Item.RAW_RABBIT, 0, 1));
             }
         }
@@ -71,7 +90,7 @@ public class Rabbit extends WalkingAnimal {
     }
 
     @Override
-    public int getKillExperience () {
+    public int getKillExperience() {
         return Utils.rand(1, 4);
     }
 

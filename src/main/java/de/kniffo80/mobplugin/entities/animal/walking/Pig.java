@@ -29,22 +29,31 @@ public class Pig extends WalkingAnimal implements EntityRideable {
 
     @Override
     public float getWidth() {
+        if (this.isBaby()) {
+            return 0.45f;
+        }
         return 0.9f;
     }
 
     @Override
     public float getHeight() {
+        if (this.isBaby()) {
+            return 0.45f;
+        }
         return 0.9f;
     }
 
     @Override
     public float getEyeHeight() {
+        if (this.isBaby()) {
+            return 0.45f;
+        }
         return 0.9f;
     }
 
     @Override
-    public boolean mountEntity(Entity entity){
-        return true;
+    public boolean isBaby() {
+        return this.getDataFlag(DATA_FLAGS, Entity.DATA_FLAG_BABY);
     }
 
     public void initEntity() {
@@ -57,12 +66,11 @@ public class Pig extends WalkingAnimal implements EntityRideable {
     public boolean targetOption(EntityCreature creature, double distance) {
         if (creature instanceof Player) {
             Player player = (Player) creature;
-            return player.spawned && player.isAlive() && !player.closed &&
-                (player.getInventory().getItemInHand().getId() == Item.CARROT ||
-                    player.getInventory().getItemInHand().getId() == Item.POTATO ||
-                    player.getInventory().getItemInHand().getId() == Item.BEETROOT
-                )
-                && distance <= 49;
+            return player.spawned && player.isAlive() && !player.closed
+                    && (player.getInventory().getItemInHand().getId() == Item.CARROT
+                    || player.getInventory().getItemInHand().getId() == Item.POTATO
+                    || player.getInventory().getItemInHand().getId() == Item.BEETROOT)
+                    && distance <= 49;
         }
         return false;
     }
@@ -78,8 +86,13 @@ public class Pig extends WalkingAnimal implements EntityRideable {
         return drops.toArray(new Item[drops.size()]);
     }
 
-    public int getKillExperience () {
+    public int getKillExperience() {
         return Utils.rand(1, 4);
+    }
+
+    @Override
+    public boolean mountEntity(Entity entity) {
+        return false;
     }
 
 }

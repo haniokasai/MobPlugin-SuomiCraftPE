@@ -42,7 +42,7 @@ public class Blaze extends FlyingMonster {
 
     @Override
     public float getWidth() {
-        return 0.72f;
+        return 0.6f;
     }
 
     @Override

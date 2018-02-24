@@ -1,6 +1,7 @@
 package de.kniffo80.mobplugin.entities.animal.walking;
 
 import cn.nukkit.Player;
+import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityCreature;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
@@ -27,15 +28,18 @@ public class Cow extends WalkingAnimal {
 
     @Override
     public float getWidth() {
-        return 0.9f;
+        if (this.isBaby()) {
+            return 0.2f;
+        }
+        return 0.45f;
     }
 
     @Override
     public float getHeight() {
         if (this.isBaby()) {
-            return 0.65f;
+            return 0.7f;
         }
-        return 1.3f;
+        return 1.4f;
     }
 
     @Override
@@ -44,6 +48,11 @@ public class Cow extends WalkingAnimal {
             return 0.65f;
         }
         return 1.2f;
+    }
+
+    @Override
+    public boolean isBaby() {
+        return this.getDataFlag(DATA_FLAGS, Entity.DATA_FLAG_BABY);
     }
 
     public void initEntity() {
@@ -67,11 +76,10 @@ public class Cow extends WalkingAnimal {
             int leatherDropCount = Utils.rand(0, 3);
             int beefDrop = Utils.rand(1, 4);
 
-            for (int i=0; i < leatherDropCount; i++) {
+            for (int i = 0; i < leatherDropCount; i++) {
                 drops.add(Item.get(Item.LEATHER, 0, 1));
             }
-
-            for (int i=0; i < beefDrop; i++) {
+            for (int i = 0; i < beefDrop; i++) {
                 drops.add(Item.get(this.isOnFire() ? Item.STEAK : Item.RAW_BEEF, 0, 1));
             }
         }

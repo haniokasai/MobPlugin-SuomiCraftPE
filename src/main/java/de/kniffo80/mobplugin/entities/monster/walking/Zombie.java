@@ -32,12 +32,12 @@ public class Zombie extends WalkingMonster implements EntityAgeable {
 
     @Override
     public float getWidth() {
-        return 0.72f;
+        return 0.6f;
     }
 
     @Override
     public float getHeight() {
-        return 1.8f;
+        return 1.95f;
     }
 
     @Override
