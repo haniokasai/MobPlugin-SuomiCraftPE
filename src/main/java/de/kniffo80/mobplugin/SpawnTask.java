@@ -15,9 +15,9 @@ public class SpawnTask implements Runnable {
 
     private Server              server           = null;
 
-    private static final int    MAX_SPAWN_RADIUS = 10; // in blocks
+    private static final int    MAX_SPAWN_RADIUS = 10;
 
-    private static final int    MIN_SPAWN_RADIUS = 3; // in blocks
+    private static final int    MIN_SPAWN_RADIUS = 3;
 
     private MobPlugin        plugin = null;
 

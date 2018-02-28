@@ -56,7 +56,7 @@ import java.util.List;
 
 public class MobPlugin extends PluginBase implements Listener {
 
-    public static boolean MOB_AI_ENABLED = false;
+    public static boolean MOB_AI_ENABLED = true;
 
     private int           counter        = 0;
 
@@ -72,7 +72,7 @@ public class MobPlugin extends PluginBase implements Listener {
         this.saveDefaultConfig();
         pluginConfig = getConfig();
 
-        MOB_AI_ENABLED = pluginConfig.getBoolean("entities.mob-ai", false);
+        MOB_AI_ENABLED = true;
         int spawnDelay = pluginConfig.getInt("entities.auto-spawn-tick", 0);
 
         this.getServer().getPluginManager().registerEvents(this, this);
@@ -80,13 +80,6 @@ public class MobPlugin extends PluginBase implements Listener {
         if (spawnDelay > 0) {
             this.getServer().getScheduler().scheduleRepeatingTask(this, new AutoSpawnTask(this), spawnDelay, true);
         }
-
-        Utils.logServerInfo(String.format("Plugin enabled successful [aiEnabled:%s] [autoSpawnTick:%d]", MOB_AI_ENABLED, spawnDelay));
-    }
-
-    @Override
-    public void onDisable() {
-        Utils.logServerInfo("Plugin disabled successful.");
     }
 
     @Override

@@ -1,5 +1,4 @@
 entities:
-  mob-ai: true
   auto-spawn-tick: 400
   worlds-spawn-disabled: "lobby"
 

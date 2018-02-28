@@ -41,7 +41,7 @@ public class BlockEntitySpawner extends BlockEntitySpawnable{
         }
 
         if(!this.namedTag.contains("MaxSpawnDelay") || !(this.namedTag.get("MaxSpawnDelay") instanceof ShortTag)){
-            this.namedTag.putShort("MaxSpawnDelay", 6000);
+            this.namedTag.putShort("MaxSpawnDelay", 5000);
         }
 
         if(!this.namedTag.contains("MaxNearbyEntities") || !(this.namedTag.get("MaxNearbyEntities") instanceof ShortTag)){
