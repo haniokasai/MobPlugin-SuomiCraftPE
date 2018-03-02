@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster;
+package suomicraftpe.mobplugin.entities.monster;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
@@ -12,9 +12,9 @@ import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
 import co.aikar.timings.Timings;
-import de.kniffo80.mobplugin.entities.WalkingEntity;
-import de.kniffo80.mobplugin.entities.monster.walking.Enderman;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.WalkingEntity;
+import suomicraftpe.mobplugin.entities.monster.walking.Enderman;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public abstract class WalkingMonster extends WalkingEntity implements Monster {
 

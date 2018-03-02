@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.autospawn;
+package suomicraftpe.mobplugin.entities.autospawn;
 
 public enum SpawnResult {
 

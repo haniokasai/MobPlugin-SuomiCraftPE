@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -16,9 +16,9 @@ import cn.nukkit.level.sound.LaunchSound;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.MobEquipmentPacket;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,7 +97,7 @@ public class Skeleton extends WalkingMonster {
         MobEquipmentPacket pk = new MobEquipmentPacket();
         pk.eid = this.getId();
         pk.item = new ItemBow();
-        pk.hotbarSlot = 9;
+        pk.hotbarSlot = 0;
         player.dataPacket(pk);
     }
 

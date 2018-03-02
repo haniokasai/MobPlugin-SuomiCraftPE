@@ -1,15 +1,15 @@
-package de.kniffo80.mobplugin.entities.spawners;
+package suomicraftpe.mobplugin.entities.spawners;
 
 import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
 import cn.nukkit.utils.Config;
-import de.kniffo80.mobplugin.AutoSpawnTask;
-import de.kniffo80.mobplugin.entities.animal.walking.Ocelot;
-import de.kniffo80.mobplugin.entities.autospawn.AbstractEntitySpawner;
-import de.kniffo80.mobplugin.entities.autospawn.SpawnResult;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.AutoSpawnTask;
+import suomicraftpe.mobplugin.entities.animal.walking.Ocelot;
+import suomicraftpe.mobplugin.entities.autospawn.AbstractEntitySpawner;
+import suomicraftpe.mobplugin.entities.autospawn.SpawnResult;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public class OcelotSpawner extends AbstractEntitySpawner {
 

@@ -1,10 +1,10 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.entity.Entity;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 
-import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
+import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
 
 public class Shulker extends WalkingMonster {
 

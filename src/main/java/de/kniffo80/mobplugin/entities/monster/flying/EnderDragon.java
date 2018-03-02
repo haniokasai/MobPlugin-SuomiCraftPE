@@ -1,10 +1,10 @@
-package de.kniffo80.mobplugin.entities.monster.flying;
+package suomicraftpe.mobplugin.entities.monster.flying;
 
 import cn.nukkit.entity.Entity;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.monster.FlyingMonster;
+import suomicraftpe.mobplugin.entities.monster.FlyingMonster;
 
 public class EnderDragon extends FlyingMonster {
 

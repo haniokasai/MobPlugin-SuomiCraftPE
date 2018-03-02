@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.flying;
+package suomicraftpe.mobplugin.entities.monster.flying;
 
 import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockFence;
@@ -17,12 +17,12 @@ import cn.nukkit.math.NukkitMath;
 import cn.nukkit.math.Vector2;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.entities.BaseEntity;
-import de.kniffo80.mobplugin.entities.animal.Animal;
-import de.kniffo80.mobplugin.entities.monster.FlyingMonster;
-import de.kniffo80.mobplugin.entities.projectile.EntityFireBall;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.entities.BaseEntity;
+import suomicraftpe.mobplugin.entities.animal.Animal;
+import suomicraftpe.mobplugin.entities.monster.FlyingMonster;
+import suomicraftpe.mobplugin.entities.projectile.EntityFireBall;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

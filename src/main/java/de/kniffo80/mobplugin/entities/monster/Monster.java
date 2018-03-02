@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster;
+package suomicraftpe.mobplugin.entities.monster;
 
 import cn.nukkit.entity.Entity;
 

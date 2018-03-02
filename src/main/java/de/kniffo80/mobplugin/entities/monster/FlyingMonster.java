@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster;
+package suomicraftpe.mobplugin.entities.monster;
 
 import cn.nukkit.Server;
 import cn.nukkit.entity.Entity;
@@ -8,8 +8,8 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
-import de.kniffo80.mobplugin.entities.FlyingEntity;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.FlyingEntity;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public abstract class FlyingMonster extends FlyingEntity implements Monster {
 

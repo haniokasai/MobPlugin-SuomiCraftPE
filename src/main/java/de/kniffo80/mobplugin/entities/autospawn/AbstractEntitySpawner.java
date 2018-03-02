@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.autospawn;
+package suomicraftpe.mobplugin.entities.autospawn;
 
 import cn.nukkit.IPlayer;
 import cn.nukkit.Player;
@@ -6,8 +6,8 @@ import cn.nukkit.Server;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
 import cn.nukkit.utils.Config;
-import de.kniffo80.mobplugin.AutoSpawnTask;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.AutoSpawnTask;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

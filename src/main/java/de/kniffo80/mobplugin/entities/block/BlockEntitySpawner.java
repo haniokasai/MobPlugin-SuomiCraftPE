@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.block;
+package suomicraftpe.mobplugin.entities.block;
 
 import cn.nukkit.Player;
 import cn.nukkit.blockentity.BlockEntitySpawnable;
@@ -8,8 +8,8 @@ import cn.nukkit.level.Position;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.nbt.tag.ShortTag;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 

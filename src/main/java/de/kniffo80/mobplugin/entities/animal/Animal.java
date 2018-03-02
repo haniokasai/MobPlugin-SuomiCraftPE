@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.animal;
+package suomicraftpe.mobplugin.entities.animal;
 
 import cn.nukkit.entity.EntityAgeable;
 

@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -10,8 +10,8 @@ import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.utils.DyeColor;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.entities.monster.TameableMonster;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.entities.monster.TameableMonster;
 
 import java.util.HashMap;
 

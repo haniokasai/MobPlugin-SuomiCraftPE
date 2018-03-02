@@ -1,9 +1,4 @@
-/**
- * MobPlugin.java
- * Special build for SuomiCraft PE
- * By PetteriM1
- */
-package de.kniffo80.mobplugin;
+package suomicraftpe.mobplugin;
 
 import cn.nukkit.IPlayer;
 import cn.nukkit.Player;
@@ -37,18 +32,18 @@ import cn.nukkit.network.protocol.EntityEventPacket;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
 import cn.nukkit.utils.DyeColor;
-import de.kniffo80.mobplugin.entities.BaseEntity;
-import de.kniffo80.mobplugin.entities.animal.flying.*;
-import de.kniffo80.mobplugin.entities.animal.jumping.Rabbit;
-import de.kniffo80.mobplugin.entities.animal.swimming.Squid;
-import de.kniffo80.mobplugin.entities.animal.walking.*;
-import de.kniffo80.mobplugin.entities.block.BlockEntitySpawner;
-import de.kniffo80.mobplugin.entities.monster.flying.*;
-import de.kniffo80.mobplugin.entities.monster.jumping.*;
-import de.kniffo80.mobplugin.entities.monster.swimming.*;
-import de.kniffo80.mobplugin.entities.monster.walking.*;
-import de.kniffo80.mobplugin.entities.projectile.EntityFireBall;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.BaseEntity;
+import suomicraftpe.mobplugin.entities.animal.flying.*;
+import suomicraftpe.mobplugin.entities.animal.jumping.Rabbit;
+import suomicraftpe.mobplugin.entities.animal.swimming.Squid;
+import suomicraftpe.mobplugin.entities.animal.walking.*;
+import suomicraftpe.mobplugin.entities.block.BlockEntitySpawner;
+import suomicraftpe.mobplugin.entities.monster.flying.*;
+import suomicraftpe.mobplugin.entities.monster.jumping.*;
+import suomicraftpe.mobplugin.entities.monster.swimming.*;
+import suomicraftpe.mobplugin.entities.monster.walking.*;
+import suomicraftpe.mobplugin.entities.projectile.EntityFireBall;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.io.File;
 import java.util.ArrayList;

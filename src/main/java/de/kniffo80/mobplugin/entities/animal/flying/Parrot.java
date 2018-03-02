@@ -1,11 +1,11 @@
-package de.kniffo80.mobplugin.entities.animal.flying;
+package suomicraftpe.mobplugin.entities.animal.flying;
 
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.animal.FlyingAnimal;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.animal.FlyingAnimal;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

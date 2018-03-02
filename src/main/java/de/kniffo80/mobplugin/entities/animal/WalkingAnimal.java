@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.animal;
+package suomicraftpe.mobplugin.entities.animal;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -10,7 +10,7 @@ import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
 import co.aikar.timings.Timings;
-import de.kniffo80.mobplugin.entities.WalkingEntity;
+import suomicraftpe.mobplugin.entities.WalkingEntity;
 
 public abstract class WalkingAnimal extends WalkingEntity implements Animal {
 

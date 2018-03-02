@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.utils;
+package suomicraftpe.mobplugin.utils;
 
 import cn.nukkit.Server;
 import cn.nukkit.utils.TextFormat;

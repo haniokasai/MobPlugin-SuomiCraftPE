@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin;
+package suomicraftpe.mobplugin;
 
 import cn.nukkit.IPlayer;
 import cn.nukkit.Player;
@@ -7,14 +7,14 @@ import cn.nukkit.entity.Entity;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
 import cn.nukkit.utils.Config;
-import de.kniffo80.mobplugin.entities.animal.flying.*;
-import de.kniffo80.mobplugin.entities.animal.jumping.Rabbit;
-import de.kniffo80.mobplugin.entities.animal.walking.*;
-import de.kniffo80.mobplugin.entities.autospawn.IEntitySpawner;
-import de.kniffo80.mobplugin.entities.monster.flying.*;
-import de.kniffo80.mobplugin.entities.monster.walking.*;
-import de.kniffo80.mobplugin.entities.spawners.*;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.animal.flying.*;
+import suomicraftpe.mobplugin.entities.animal.jumping.Rabbit;
+import suomicraftpe.mobplugin.entities.animal.walking.*;
+import suomicraftpe.mobplugin.entities.autospawn.IEntitySpawner;
+import suomicraftpe.mobplugin.entities.monster.flying.*;
+import suomicraftpe.mobplugin.entities.monster.walking.*;
+import suomicraftpe.mobplugin.entities.spawners.*;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

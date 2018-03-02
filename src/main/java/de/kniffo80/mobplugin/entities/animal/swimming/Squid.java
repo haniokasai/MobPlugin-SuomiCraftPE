@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.animal.swimming;
+package suomicraftpe.mobplugin.entities.animal.swimming;
 
 import cn.nukkit.entity.EntityCreature;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
@@ -7,8 +7,8 @@ import cn.nukkit.item.ItemDye;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.utils.DyeColor;
-import de.kniffo80.mobplugin.entities.animal.WalkingAnimal;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.animal.WalkingAnimal;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public class Squid extends WalkingAnimal {
 

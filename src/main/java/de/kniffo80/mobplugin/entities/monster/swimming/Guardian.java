@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.swimming;
+package suomicraftpe.mobplugin.entities.monster.swimming;
 
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityCreature;
@@ -6,8 +6,8 @@ import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

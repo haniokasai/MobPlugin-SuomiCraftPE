@@ -1,10 +1,10 @@
-package de.kniffo80.mobplugin.entities.animal.flying;
+package suomicraftpe.mobplugin.entities.animal.flying;
 
 import cn.nukkit.entity.EntityCreature;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.animal.FlyingAnimal;
+import suomicraftpe.mobplugin.entities.animal.FlyingAnimal;
 
 public class Bat extends FlyingAnimal {
 

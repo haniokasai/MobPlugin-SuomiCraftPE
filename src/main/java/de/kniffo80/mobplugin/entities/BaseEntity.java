@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities;
+package suomicraftpe.mobplugin.entities;
 
 import cn.nukkit.Player;
 import cn.nukkit.block.Block;
@@ -17,8 +17,8 @@ import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.AddEntityPacket;
 import cn.nukkit.potion.Effect;
 import co.aikar.timings.Timings;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.entities.monster.Monster;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.entities.monster.Monster;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

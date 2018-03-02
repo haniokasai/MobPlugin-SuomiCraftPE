@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.block.BlockLiquid;
 import cn.nukkit.entity.Entity;
@@ -15,8 +15,8 @@ import cn.nukkit.math.NukkitMath;
 import cn.nukkit.math.Vector2;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

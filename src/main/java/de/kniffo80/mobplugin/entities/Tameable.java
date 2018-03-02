@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities;
+package suomicraftpe.mobplugin.entities;
 
 import cn.nukkit.Player;
 

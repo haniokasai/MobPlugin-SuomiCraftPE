@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.monster.walking;
+package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -14,9 +14,9 @@ import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
 import cn.nukkit.potion.Potion;
-import de.kniffo80.mobplugin.MobPlugin;
-import de.kniffo80.mobplugin.entities.monster.WalkingMonster;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.MobPlugin;
+import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public class Witch extends WalkingMonster {
 

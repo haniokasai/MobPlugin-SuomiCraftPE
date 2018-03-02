@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.animal.walking;
+package suomicraftpe.mobplugin.entities.animal.walking;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -7,8 +7,8 @@ import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-import de.kniffo80.mobplugin.entities.animal.WalkingAnimal;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.entities.animal.WalkingAnimal;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

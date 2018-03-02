@@ -1,4 +1,4 @@
-package de.kniffo80.mobplugin.entities.projectile;
+package suomicraftpe.mobplugin.entities.projectile;
 
 import cn.nukkit.Player;
 import cn.nukkit.block.Block;
@@ -11,7 +11,7 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.level.particle.CriticalParticle;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.AddEntityPacket;
-import de.kniffo80.mobplugin.utils.Utils;
+import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.List;
 
