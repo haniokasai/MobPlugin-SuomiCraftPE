@@ -21,7 +21,7 @@ import suomicraftpe.mobplugin.MobPlugin;
 import suomicraftpe.mobplugin.entities.BaseEntity;
 import suomicraftpe.mobplugin.entities.animal.Animal;
 import suomicraftpe.mobplugin.entities.monster.FlyingMonster;
-import suomicraftpe.mobplugin.entities.projectile.EntityFireBall;
+import suomicraftpe.mobplugin.entities.projectile.BlazeFireBall;
 import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.ArrayList;
@@ -253,12 +253,12 @@ public class Blaze extends FlyingMonster {
             double pitch = this.pitch + Utils.rand(-75, 75) / 10;
             Location pos = new Location(this.x - Math.sin(Math.toRadians(yaw)) * Math.cos(Math.toRadians(pitch)) * 0.5, this.y + this.getEyeHeight(),
                     this.z + Math.cos(Math.toRadians(yaw)) * Math.cos(Math.toRadians(pitch)) * 0.5, yaw, pitch, this.level);
-            Entity k = MobPlugin.create("FireBall", pos, this);
-            if (!(k instanceof EntityFireBall)) {
+            Entity k = MobPlugin.create("BlazeFireBall", pos, this);
+            if (!(k instanceof BlazeFireBall)) {
                 return;
             }
 
-            EntityFireBall fireball = (EntityFireBall) k;
+            BlazeFireBall fireball = (BlazeFireBall) k;
             fireball.setExplode(true);
             fireball.setMotion(new Vector3(-Math.sin(Math.toDegrees(yaw)) * Math.cos(Math.toDegrees(pitch)) * f * f, -Math.sin(Math.toDegrees(pitch)) * f * f,
                     Math.cos(Math.toDegrees(yaw)) * Math.cos(Math.toDegrees(pitch)) * f * f));

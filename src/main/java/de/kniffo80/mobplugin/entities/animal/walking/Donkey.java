@@ -13,7 +13,7 @@ import suomicraftpe.mobplugin.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Donkey extends WalkingAnimal {
+public class Donkey extends Horse {
 
     public static final int NETWORK_ID = 24;
 
@@ -43,7 +43,7 @@ public class Donkey extends WalkingAnimal {
     }
 
     @Override
-    public int getMaxJumpHeight() {
+    public float getMaxJumpHeight() {
         return 2;
     }
 

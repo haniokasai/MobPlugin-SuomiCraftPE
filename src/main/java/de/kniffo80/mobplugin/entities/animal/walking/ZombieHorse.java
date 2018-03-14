@@ -11,7 +11,7 @@ import suomicraftpe.mobplugin.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZombieHorse extends WalkingAnimal {
+public class ZombieHorse extends Horse {
 
     public static final int NETWORK_ID = 27;
 
@@ -41,7 +41,7 @@ public class ZombieHorse extends WalkingAnimal {
     }
 
     @Override
-    public int getMaxJumpHeight() {
+    public float getMaxJumpHeight() {
         return 2;
     }
 
@@ -61,7 +61,7 @@ public class ZombieHorse extends WalkingAnimal {
         List<Item> drops = new ArrayList<>();
         if (this.lastDamageCause instanceof EntityDamageByEntityEvent) {
             int leather = Utils.rand(0, 3);
-            int rottenflesh = Utils.rand(1, 2);
+            int rottenflesh = Utils.rand(0, 3);
 
             for (int i = 0; i < leather; i++) {
                 drops.add(Item.get(Item.LEATHER, 0, 1));

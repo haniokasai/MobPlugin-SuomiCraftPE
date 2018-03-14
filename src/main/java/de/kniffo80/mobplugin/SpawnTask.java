@@ -19,7 +19,7 @@ public class SpawnTask implements Runnable {
 
     private static final int    MIN_SPAWN_RADIUS = 3;
 
-    private MobPlugin        plugin = null;
+    private MobPlugin           plugin = null;
 
     public SpawnTask(MobPlugin plugin) {
         this.server = Server.getInstance();
@@ -50,7 +50,6 @@ public class SpawnTask implements Runnable {
         int spawnZ = (int)startSpawnPosition.z;
         int spawnY = (int)startSpawnPosition.y;
         Position spawnPosition = null;
-
 
         int minSpawnX1 = spawnX - MIN_SPAWN_RADIUS;
         int minSpawnX2 = spawnX + MIN_SPAWN_RADIUS;
@@ -114,5 +113,5 @@ public class SpawnTask implements Runnable {
         }
         return true;
     }
-
+    
 }

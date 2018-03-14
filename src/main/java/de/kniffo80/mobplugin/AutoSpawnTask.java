@@ -9,9 +9,11 @@ import cn.nukkit.level.Position;
 import cn.nukkit.utils.Config;
 import suomicraftpe.mobplugin.entities.animal.flying.*;
 import suomicraftpe.mobplugin.entities.animal.jumping.Rabbit;
+import suomicraftpe.mobplugin.entities.animal.swimming.Squid;
 import suomicraftpe.mobplugin.entities.animal.walking.*;
 import suomicraftpe.mobplugin.entities.autospawn.IEntitySpawner;
 import suomicraftpe.mobplugin.entities.monster.flying.*;
+import suomicraftpe.mobplugin.entities.monster.jumping.*;
 import suomicraftpe.mobplugin.entities.monster.walking.*;
 import suomicraftpe.mobplugin.entities.spawners.*;
 import suomicraftpe.mobplugin.utils.Utils;
@@ -64,16 +66,26 @@ public class AutoSpawnTask implements Runnable {
 
     private void prepareSpawnerClasses() {
         entitySpawners.add(new BatSpawner(this, this.pluginConfig));
+        entitySpawners.add(new BlazeSpawner(this, this.pluginConfig));
         entitySpawners.add(new ChickenSpawner(this, this.pluginConfig));
         entitySpawners.add(new CowSpawner(this, this.pluginConfig));
         entitySpawners.add(new CreeperSpawner(this, this.pluginConfig));
         entitySpawners.add(new EndermanSpawner(this, this.pluginConfig));
+        entitySpawners.add(new GhastSpawner(this, this.pluginConfig));
+        entitySpawners.add(new HorseSpawner(this, this.pluginConfig));
+        entitySpawners.add(new HuskSpawner(this, this.pluginConfig));
+        entitySpawners.add(new MooshroomSpawner(this, this.pluginConfig));
         entitySpawners.add(new OcelotSpawner(this, this.pluginConfig));
         entitySpawners.add(new PigSpawner(this, this.pluginConfig));
+        entitySpawners.add(new PolarBearSpawner(this, this.pluginConfig));
+        entitySpawners.add(new PigZombieSpawner(this, this.pluginConfig));
         entitySpawners.add(new RabbitSpawner(this, this.pluginConfig));
         entitySpawners.add(new SheepSpawner(this, this.pluginConfig));
         entitySpawners.add(new SkeletonSpawner(this, this.pluginConfig));
         entitySpawners.add(new SpiderSpawner(this, this.pluginConfig));
+        entitySpawners.add(new StraySpawner(this, this.pluginConfig));
+        entitySpawners.add(new SquidSpawner(this, this.pluginConfig));
+        entitySpawners.add(new SlimeSpawner(this, this.pluginConfig));
         entitySpawners.add(new WolfSpawner(this, this.pluginConfig));
         entitySpawners.add(new ZombieSpawner(this, this.pluginConfig));
     }
@@ -90,20 +102,22 @@ public class AutoSpawnTask implements Runnable {
         maxSpawns.put(Mooshroom.NETWORK_ID, this.pluginConfig.getInt("max-spawns.mooshroom", 0));
         maxSpawns.put(Ocelot.NETWORK_ID, this.pluginConfig.getInt("max-spawns.ocelot", 0));
         maxSpawns.put(Pig.NETWORK_ID, this.pluginConfig.getInt("max-spawns.pig", 0));
+        maxSpawns.put(PolarBear.NETWORK_ID, this.pluginConfig.getInt("max-spawns.polarbear", 0));
+        maxSpawns.put(PigZombie.NETWORK_ID, this.pluginConfig.getInt("max-spawns.pigzombie", 0));
         maxSpawns.put(Rabbit.NETWORK_ID, this.pluginConfig.getInt("max-spawns.rabbit", 0));
         maxSpawns.put(Sheep.NETWORK_ID, this.pluginConfig.getInt("max-spawns.sheep", 0));
         maxSpawns.put(Skeleton.NETWORK_ID, this.pluginConfig.getInt("max-spawns.skeleton", 0));
         maxSpawns.put(Spider.NETWORK_ID, this.pluginConfig.getInt("max-spawns.spider", 0));
+        maxSpawns.put(Stray.NETWORK_ID, this.pluginConfig.getInt("max-spawns.stray", 0));
+        maxSpawns.put(Squid.NETWORK_ID, this.pluginConfig.getInt("max-spawns.squid", 0));
+        maxSpawns.put(Slime.NETWORK_ID, this.pluginConfig.getInt("max-spawns.slime", 0));
         maxSpawns.put(Wolf.NETWORK_ID, this.pluginConfig.getInt("max-spawns.wolf", 0));
         maxSpawns.put(Zombie.NETWORK_ID, this.pluginConfig.getInt("max-spawns.zombie", 0));
     }
 
     public boolean entitySpawnAllowed(Level level, int networkId, String entityName) {
         int count = countEntity(level, networkId);
-        if (count < maxSpawns.get(networkId)) {
-            return true;
-        }
-        return false;
+        return count < maxSpawns.getOrDefault(networkId, 0);
     }
 
     private int countEntity(Level level, int networkId) {

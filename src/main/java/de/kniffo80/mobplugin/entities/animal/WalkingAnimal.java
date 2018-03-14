@@ -6,11 +6,13 @@ import cn.nukkit.entity.data.ShortEntityData;
 import cn.nukkit.event.entity.EntityDamageEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
+import cn.nukkit.level.particle.HeartParticle;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
 import co.aikar.timings.Timings;
 import suomicraftpe.mobplugin.entities.WalkingEntity;
+import suomicraftpe.mobplugin.utils.Utils;
 
 public abstract class WalkingAnimal extends WalkingEntity implements Animal {
 
@@ -47,6 +49,15 @@ public abstract class WalkingAnimal extends WalkingEntity implements Animal {
         Timings.entityBaseTickTimer.startTiming();
 
         hasUpdate = super.entityBaseTick(tickDiff);
+
+        if(this.isInLove()) {
+            this.inLoveTicks -= tickDiff;
+            if (this.age % 20 == 0) {
+                for (int i = 0; i < 3; i++) {
+                    this.level.addParticle(new HeartParticle(this.add(Utils.rand(-1.0,1.0),this.getMountedYOffset()+ Utils.rand(-1.0,1.0),Utils.rand(-1.0,1.0))));
+                }
+            }
+        }
 
         if (!this.hasEffect(Effect.WATER_BREATHING) && this.isInsideOfWater()) {
             hasUpdate = true;
@@ -104,6 +115,10 @@ public abstract class WalkingAnimal extends WalkingEntity implements Animal {
     public void setInLove() {
         this.inLoveTicks = 600;
         this.setDataFlag(DATA_FLAGS, DATA_FLAG_INLOVE);
+    }
+
+    public boolean isInLove(){
+        return inLoveTicks > 0;
     }
 
     public boolean isBreedingItem(Item item) {

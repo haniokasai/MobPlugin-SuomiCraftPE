@@ -43,7 +43,7 @@ public class MagmaCube extends WalkingMonster {
     }
 
     @Override
-    public int getMaxJumpHeight() {
+    public float getMaxJumpHeight() {
         return 2;
     }
 

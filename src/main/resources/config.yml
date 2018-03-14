@@ -16,10 +16,13 @@ max-spawns:
   ocelot: 0
   pig: 0
   polarbear: 0
-  rabbit: 0
+  pigzombie: 0
+  rabbit: 1
   stray: 0
   sheep: 0
   skeleton: 0
   spider: 0
+  squid: 0
+  slime: 0
   wolf: 0
   zombie: 0

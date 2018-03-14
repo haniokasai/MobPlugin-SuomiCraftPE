@@ -17,7 +17,6 @@ import cn.nukkit.event.block.BlockPlaceEvent;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.event.entity.EntityDeathEvent;
 import cn.nukkit.event.player.PlayerInteractEvent;
-import cn.nukkit.event.player.PlayerMouseOverEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Location;
@@ -42,10 +41,9 @@ import suomicraftpe.mobplugin.entities.monster.flying.*;
 import suomicraftpe.mobplugin.entities.monster.jumping.*;
 import suomicraftpe.mobplugin.entities.monster.swimming.*;
 import suomicraftpe.mobplugin.entities.monster.walking.*;
-import suomicraftpe.mobplugin.entities.projectile.EntityFireBall;
+import suomicraftpe.mobplugin.entities.projectile.*;
 import suomicraftpe.mobplugin.utils.Utils;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -192,6 +190,7 @@ public class MobPlugin extends PluginBase implements Listener {
         Entity.registerEntity(SnowGolem.class.getSimpleName(), SnowGolem.class);
         Entity.registerEntity(Spider.class.getSimpleName(), Spider.class);
         Entity.registerEntity(Stray.class.getSimpleName(), Stray.class);
+        Entity.registerEntity(Vex.class.getSimpleName(), Vex.class);
         Entity.registerEntity(Vindicator.class.getSimpleName(), Vindicator.class);
         Entity.registerEntity(Witch.class.getSimpleName(), Witch.class);
         Entity.registerEntity(Wither.class.getSimpleName(), Wither.class);
@@ -200,7 +199,13 @@ public class MobPlugin extends PluginBase implements Listener {
         Entity.registerEntity(Zombie.class.getSimpleName(), Zombie.class);
         Entity.registerEntity(ZombieVillager.class.getSimpleName(), ZombieVillager.class);
 
-        Entity.registerEntity("FireBall", EntityFireBall.class);
+        Entity.registerEntity("BlueWitherSkull", BlueWitherSkull.class);
+        Entity.registerEntity("BlazeFireBall", BlazeFireBall.class);
+        Entity.registerEntity("EnderCharge", EnderCharge.class);
+        Entity.registerEntity("GhastFireBall", GhastFireBall.class);
+        Entity.registerEntity("LlamaSpit", LlamaSpit.class);
+        Entity.registerEntity("EvocationFangs", EvocationFangs.class);
+        Entity.registerEntity("ShulkerBullet", ShulkerBullet.class);
 
         BlockEntity.registerBlockEntity("MobSpawner", BlockEntitySpawner.class);
     }
@@ -333,30 +338,7 @@ public class MobPlugin extends PluginBase implements Listener {
         Block block = ev.getBlock();
         if ((block.getId() == Block.MONSTER_EGG)
             && block.getLevel().getBlockLightAt((int) block.x, (int) block.y, (int) block.z) < 12 && Utils.rand(1, 5) == 1) {
-
               Silverfish entity = (Silverfish) create("Silverfish", block.add(0.5, 0, 0.5)); if(entity != null){ entity.spawnToAll(); }
-        }
-    }
-
-    @EventHandler
-    public void PlayerMouseOverEntityEvent(PlayerMouseOverEntityEvent ev) {
-        if (this.counter > 10) {
-            counter = 0;
-            if (ev != null && ev.getEntity() != null && ev.getPlayer() != null && ev.getEntity().getNetworkId() == Wolf.NETWORK_ID && ev.getPlayer().getInventory().getItemInHand().getId() == Item.BONE) {
-                Wolf wolf = (Wolf)ev.getEntity();
-                if (!wolf.isAngry() && wolf.getOwner() == null) {
-                    EntityEventPacket packet = new EntityEventPacket();
-                    packet.eid = ev.getEntity().getId();
-                    packet.event = EntityEventPacket.TAME_SUCCESS;
-                    Server.broadcastPacket(new Player[] { ev.getPlayer() }, packet);
-
-                    wolf.setOwner(ev.getPlayer());
-                    wolf.setCollarColor(DyeColor.BLUE);
-                    wolf.saveNBT();
-                }
-            }
-        } else {
-            counter++;
         }
     }
 }

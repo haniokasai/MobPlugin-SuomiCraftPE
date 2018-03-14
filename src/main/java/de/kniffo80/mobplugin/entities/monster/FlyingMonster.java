@@ -8,6 +8,7 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Effect;
+import co.aikar.timings.Timings;
 import suomicraftpe.mobplugin.entities.FlyingEntity;
 import suomicraftpe.mobplugin.utils.Utils;
 
@@ -165,6 +166,9 @@ public abstract class FlyingMonster extends FlyingEntity implements Monster {
     }
 
     public boolean entityBaseTick(int tickDiff) {
+
+        Timings.entityBaseTickTimer.startTiming();
+
         boolean hasUpdate = false;
 
         hasUpdate = super.entityBaseTick(tickDiff);
@@ -182,6 +186,7 @@ public abstract class FlyingMonster extends FlyingEntity implements Monster {
             this.setDataProperty(new ShortEntityData(DATA_AIR, 300));
         }
 
+        Timings.entityBaseTickTimer.stopTiming();
         return hasUpdate;
     }
 

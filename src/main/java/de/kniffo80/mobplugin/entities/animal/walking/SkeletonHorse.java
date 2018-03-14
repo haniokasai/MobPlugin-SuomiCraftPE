@@ -11,7 +11,7 @@ import suomicraftpe.mobplugin.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkeletonHorse extends WalkingAnimal {
+public class SkeletonHorse extends Horse {
 
     public static final int NETWORK_ID = 26;
 
@@ -41,7 +41,7 @@ public class SkeletonHorse extends WalkingAnimal {
     }
 
     @Override
-    public int getMaxJumpHeight() {
+    public float getMaxJumpHeight() {
         return 2;
     }
 
