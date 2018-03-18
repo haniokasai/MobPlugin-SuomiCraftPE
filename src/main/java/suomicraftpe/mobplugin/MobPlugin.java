@@ -88,6 +88,12 @@ public class MobPlugin extends PluginBase implements Listener {
             switch (args[0]) {
 
                 case "spawn":
+
+                    if (args.length == 1) {
+                        commandSender.sendMessage("Usage: /mob spawn <mob> <opt:player>");
+                        break;
+                    }
+
                     String mob = args[1];
                     Player playerThatSpawns = null;
 
