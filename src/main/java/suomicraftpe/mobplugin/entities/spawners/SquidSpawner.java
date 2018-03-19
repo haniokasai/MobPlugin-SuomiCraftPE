@@ -24,6 +24,7 @@ public class SquidSpawner extends AbstractEntitySpawner {
     @Override
     public SpawnResult spawn(IPlayer iPlayer, Position pos, Level level) {
         SpawnResult result = SpawnResult.OK;
+        
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
         if (biomeId != Biome.OCEAN) {

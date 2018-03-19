@@ -117,7 +117,7 @@ public abstract class WalkingEntity extends BaseEntity {
     }
 
     public Vector3 updateMove(int tickDiff) {
-        if (MobPlugin.MOB_AI_ENABLED) {
+        if (MobPlugin.MOB_AI_ENABLED && !isImmobile()) {
             if (!this.isMovement()) {
                 return null;
             }

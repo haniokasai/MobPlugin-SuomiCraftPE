@@ -21,14 +21,11 @@ public class SlimeSpawner extends AbstractEntitySpawner {
         SpawnResult result = SpawnResult.OK;
 
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
-        int blockLightLevel = level.getBlockLightAt((int) pos.x, (int) pos.y, (int) pos.z);
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
         int time = level.getTime() % Level.TIME_FULL;
 
         if (!Block.solid[blockId]) {
             result = SpawnResult.WRONG_BLOCK;
-        } else if (blockLightLevel > 7) {
-            result = SpawnResult.WRONG_LIGHTLEVEL;
         } else if (biomeId != Biome.SWAMP) {
             result = SpawnResult.WRONG_BLOCK;
         } else if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {

@@ -25,7 +25,6 @@ public class OcelotSpawner extends AbstractEntitySpawner {
         }
 
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
-        int blockLightLevel = level.getBlockLightAt((int) pos.x, (int) pos.y, (int) pos.z);
 
         if (blockId != Block.GRASS && blockId != Block.LEAVE) {
             result = SpawnResult.WRONG_BLOCK;
