@@ -58,7 +58,7 @@ public class Wolf extends TameableMonster {
     @Override
     protected void initEntity() {
         super.initEntity();
-        this.setDamage(new int[] { 0, 2, 3, 4 });
+        this.setDamage(new int[] { 0, 3, 4, 6 });
 
         if (this.namedTag.contains(NBT_KEY_ANGRY)) {
             this.angry = this.namedTag.getInt(NBT_KEY_ANGRY);
