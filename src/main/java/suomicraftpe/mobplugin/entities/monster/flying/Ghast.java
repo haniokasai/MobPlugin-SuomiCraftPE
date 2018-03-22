@@ -58,9 +58,9 @@ public class Ghast extends FlyingMonster {
     public boolean targetOption(EntityCreature creature, double distance) {
         if (creature instanceof Player) {
             Player player = (Player) creature;
-            return player.spawned && player.isAlive() && !player.closed && player.isSurvival() && distance <= 81;
+            return player.spawned && player.isAlive() && !player.closed && player.isSurvival() && distance <= 100;
         }
-        return creature.isAlive() && !creature.closed && distance <= 81;
+        return creature.isAlive() && !creature.closed && distance <= 100;
     }
 
     public void attackEntity(Entity player) {

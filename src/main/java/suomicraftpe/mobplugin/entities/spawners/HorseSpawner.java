@@ -29,7 +29,7 @@ public class HorseSpawner extends AbstractEntitySpawner {
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
-        if (!Block.solid[blockId]) {
+        if (blockId != Block.GRASS) {
             result = SpawnResult.WRONG_BLOCK;
         } else if (biomeId != Biome.PLAINS || biomeId != Biome.SAVANNA) {
             result = SpawnResult.WRONG_BLOCK;

@@ -185,7 +185,7 @@ public abstract class BaseEntity extends EntityCreature {
                 Player player = (Player) creature;
                 return !player.closed && player.spawned && player.isAlive() && player.isSurvival() && distance <= 80;
             }
-            return creature.isAlive() && !creature.closed && distance <= 81;
+            return creature.isAlive() && !creature.closed && distance <= 80;
         }
         return false;
     }
@@ -238,6 +238,7 @@ public abstract class BaseEntity extends EntityCreature {
                 inWater = true;
             } else if (block.getId() == Block.LAVA || block.getId() == Block.STILL_LAVA) {
                 inLava = true;
+                this.close();
             } else if (block.getId() == Block.LADDER || block.getId() == Block.VINE) {
                 onClimbable = true;
             }
@@ -280,33 +281,11 @@ public abstract class BaseEntity extends EntityCreature {
         this.checkBlockCollision();
 
         if (this.isInsideOfSolid()) {
-            hasUpdate = true;
-            this.attack(new EntityDamageEvent(this, EntityDamageEvent.DamageCause.SUFFOCATION, 1));
-        }
-
-        if (this.y <= -16 && this.isAlive()) {
-            hasUpdate = true;
-            this.attack(new EntityDamageEvent(this, EntityDamageEvent.DamageCause.VOID, 10));
-        }
-
-        if (this.y < 10) {
             this.close();
         }
 
-        if (source != null) {
-            if (((EntityDamageByBlockEvent) source).equals(Block.CACTUS)) {
-                this.attack(new EntityDamageEvent(this, EntityDamageEvent.DamageCause.CONTACT, 1));
-            }
-            if (((EntityDamageByBlockEvent) source).equals(Block.LAVA)) {
-                this.attack(new EntityDamageEvent(this, EntityDamageEvent.DamageCause.CONTACT, 4));
-            }
-        }
-
-        if (!this.isAlive()) {
-            this.removeAllEffects();
-            this.despawnFromAll();
+        if (this.y < 5) {
             this.close();
-            return false;
         }
 
         if (this.fireTicks > 0) {

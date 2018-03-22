@@ -16,7 +16,7 @@ import java.util.List;
 public class Horse extends WalkingAnimal {
 
     public static final int NETWORK_ID = 23;
-    
+
     private int Type = 0;
     private int Variant = this.getRandomVariant();
 
@@ -101,7 +101,7 @@ public class Horse extends WalkingAnimal {
                     || player.getInventory().getItemInHand().getId() == Item.SUGAR
                     || player.getInventory().getItemInHand().getId() == Item.BREAD
                     || player.getInventory().getItemInHand().getId() == Item.GOLDEN_CARROT)
-                    && distance <= 49;
+                    && distance <= 40;
         }
         return false;
     }

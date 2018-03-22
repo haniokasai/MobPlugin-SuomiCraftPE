@@ -1,5 +1,6 @@
 package suomicraftpe.mobplugin.entities.monster.walking;
 
+import cn.nukkit.Server;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityAgeable;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
@@ -7,7 +8,7 @@ import cn.nukkit.event.entity.EntityDamageEvent.DamageCause;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
-
+import cn.nukkit.network.protocol.EntityEventPacket;
 import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
 import suomicraftpe.mobplugin.utils.Utils;
 
@@ -80,6 +81,10 @@ public class Husk extends WalkingMonster implements EntityAgeable {
         if (this.attackDelay > 10 && player.distanceSquared(this) <= 1) {
             this.attackDelay = 0;
             player.attack(new EntityDamageByEntityEvent(this, player, DamageCause.ENTITY_ATTACK, getDamage()));
+            EntityEventPacket pk = new EntityEventPacket();
+            pk.eid = this.getId();
+            pk.event = 4;
+            Server.broadcastPacket(this.getViewers().values(), pk);
         }
     }
 

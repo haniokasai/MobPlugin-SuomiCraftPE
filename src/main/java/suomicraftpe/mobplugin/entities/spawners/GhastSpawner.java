@@ -32,9 +32,9 @@ public class GhastSpawner extends AbstractEntitySpawner {
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
-        if (Block.transparent[blockId]) { // only spawns on opaque blocks
+        if (biomeId != Biome.HELL) {
             result = SpawnResult.WRONG_BLOCK;
-        } else if (biomeId != Biome.HELL) {
+        } else if (!Block.transparent[blockId]) {
             result = SpawnResult.WRONG_BLOCK;
         } else {
             this.spawnTask.createEntity(getEntityName(), pos.add(0, 2.3, 0));

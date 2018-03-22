@@ -66,13 +66,9 @@ public class MobPlugin extends PluginBase implements Listener {
         pluginConfig = getConfig();
 
         MOB_AI_ENABLED = true;
-        int spawnDelay = pluginConfig.getInt("entities.auto-spawn-tick", 0);
 
         this.getServer().getPluginManager().registerEvents(this, this);
-
-        if (spawnDelay > 0) {
-            this.getServer().getScheduler().scheduleRepeatingTask(this, new AutoSpawnTask(this), spawnDelay, true);
-        }
+        this.getServer().getScheduler().scheduleDelayedRepeatingTask(this, new AutoSpawnTask(this), 300, 300);
     }
 
     @Override

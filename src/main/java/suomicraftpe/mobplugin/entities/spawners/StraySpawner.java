@@ -32,10 +32,10 @@ public class StraySpawner extends AbstractEntitySpawner {
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
         int time = level.getTime() % Level.TIME_FULL;
 
-        if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {
-            result = SpawnResult.POSITION_MISMATCH;
-        } else if (biomeId != Biome.ICE_PLAINS) {
+        if (biomeId != Biome.ICE_PLAINS) {
             result = SpawnResult.WRONG_BLOCK;
+        } else if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {
+            result = SpawnResult.POSITION_MISMATCH;
         } else if (time > 13184 && time < 22800) {
             this.spawnTask.createEntity(getEntityName(), pos.add(0, 2.8, 0));
         }

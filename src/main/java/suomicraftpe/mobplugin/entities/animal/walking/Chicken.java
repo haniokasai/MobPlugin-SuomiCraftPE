@@ -103,7 +103,7 @@ public class Chicken extends WalkingAnimal {
                     && (player.getInventory().getItemInHand().getId() == Item.SEEDS
                     || player.getInventory().getItemInHand().getId() == Item.BEETROOT_SEEDS
                     || player.getInventory().getItemInHand().getId() == Item.MELON_SEEDS
-                    || player.getInventory().getItemInHand().getId() == Item.PUMPKIN_SEEDS) && distance <= 49;
+                    || player.getInventory().getItemInHand().getId() == Item.PUMPKIN_SEEDS) && distance <= 40;
         }
         return false;
     }

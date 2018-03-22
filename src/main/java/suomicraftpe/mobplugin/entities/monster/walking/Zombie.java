@@ -52,7 +52,7 @@ public class Zombie extends WalkingMonster implements EntityAgeable {
         super.initEntity();
 
         this.setDamage(new int[] { 0, 2, 3, 4 });
-        setMaxHealth(20);
+        this.setMaxHealth(20);
     }
 
     @Override

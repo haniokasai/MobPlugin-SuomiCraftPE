@@ -1,5 +1,4 @@
 entities:
-  auto-spawn-tick: 400
   worlds-spawn-disabled: "lobby"
 
 max-spawns:
@@ -10,14 +9,13 @@ max-spawns:
   creeper: 0
   enderman: 0
   ghast: 0
-  husk: 0
   horse: 0
   mooshroom: 0
   ocelot: 0
   pig: 0
   polarbear: 0
   pigzombie: 0
-  rabbit: 1
+  rabbit: 0
   stray: 0
   sheep: 0
   skeleton: 0

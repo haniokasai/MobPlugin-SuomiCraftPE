@@ -58,9 +58,9 @@ public class Witch extends WalkingMonster {
     public boolean targetOption(EntityCreature creature, double distance) {
         if (creature instanceof Player) {
             Player player = (Player) creature;
-            return !player.closed && player.spawned && player.isAlive() && player.isSurvival() && distance <= 100;
+            return !player.closed && player.spawned && player.isAlive() && player.isSurvival() && distance <= 80;
         }
-        return creature.isAlive() && !creature.closed && distance <= 81;
+        return creature.isAlive() && !creature.closed && distance <= 80;
     }
 
     @Override

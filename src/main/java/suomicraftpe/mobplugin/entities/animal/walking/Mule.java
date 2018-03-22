@@ -70,7 +70,7 @@ public class Mule extends Horse {
                     || player.getInventory().getItemInHand().getId() == Item.SUGAR
                     || player.getInventory().getItemInHand().getId() == Item.BREAD
                     || player.getInventory().getItemInHand().getId() == Item.GOLDEN_CARROT)
-                    && distance <= 49;
+                    && distance <= 40;
         }
         return false;
     }
