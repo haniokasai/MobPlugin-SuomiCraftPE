@@ -9,7 +9,7 @@ public class Utils {
 
     private static final Server SERVER = Server.getInstance();
 
-    public static final void logServerInfo (String text) {
+    public static void logServerInfo (String text) {
         SERVER.getLogger().info(TextFormat.GOLD + "[MobPlugin] " + text);
     }
 

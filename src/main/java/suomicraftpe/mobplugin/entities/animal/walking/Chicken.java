@@ -6,7 +6,6 @@ import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Sound;
 import cn.nukkit.level.format.FullChunk;
-import cn.nukkit.level.particle.GenericParticle;
 import cn.nukkit.level.particle.ItemBreakParticle;
 import cn.nukkit.nbt.tag.CompoundTag;
 import suomicraftpe.mobplugin.entities.animal.WalkingAnimal;
@@ -68,16 +67,12 @@ public class Chicken extends WalkingAnimal {
     @Override
     public void initEntity() {
         super.initEntity();
-        if(this.namedTag.contains("EggLayTime")){
+        if (this.namedTag.contains("EggLayTime")) {
             this.EggLayTime = this.namedTag.getInt("EggLayTime");
-        }else{
+        } else {
             this.EggLayTime = this.getRandomEggLayTime();
         }
-        if(this.namedTag.contains("IsChickenJockey")){
-            this.IsChickenJockey = this.namedTag.getBoolean("IsChickenJockey");
-        }else{
-            this.IsChickenJockey = false;
-        }
+        this.IsChickenJockey = this.namedTag.contains("IsChickenJockey") && this.namedTag.getBoolean("IsChickenJockey");
 
         this.setMaxHealth(4);
     }

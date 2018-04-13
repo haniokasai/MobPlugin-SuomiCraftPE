@@ -1,7 +1,6 @@
 package suomicraftpe.mobplugin.entities.spawners;
 
 import cn.nukkit.IPlayer;
-import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
 

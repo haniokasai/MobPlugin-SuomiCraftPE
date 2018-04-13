@@ -92,7 +92,7 @@ public class Sheep extends WalkingAnimal {
     @Override
     public boolean onInteract(Player player, Item item) {
         if (item.getId() == Item.DYE) {
-            this.setColor(((ItemDye) item).getDyeColor().getWoolData());;
+            this.setColor(((ItemDye) item).getDyeColor().getWoolData());
             return true;
         }else if(item.equals(Item.get(Item.WHEAT,0,1)) && !this.isBaby()){
             player.getInventory().removeItem(Item.get(Item.WHEAT,0,1));

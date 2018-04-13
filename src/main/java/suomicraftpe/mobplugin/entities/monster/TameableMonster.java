@@ -2,7 +2,6 @@ package suomicraftpe.mobplugin.entities.monster;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
-import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.data.LongEntityData;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;

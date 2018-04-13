@@ -1,7 +1,6 @@
 package suomicraftpe.mobplugin.entities.projectile;
 
 import cn.nukkit.Player;
-import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockCobblestone;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.projectile.EntityProjectile;
@@ -12,8 +11,6 @@ import cn.nukkit.level.particle.CriticalParticle;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.AddEntityPacket;
 import suomicraftpe.mobplugin.utils.Utils;
-
-import java.util.List;
 
 public class GhastFireBall extends EntityProjectile {
 

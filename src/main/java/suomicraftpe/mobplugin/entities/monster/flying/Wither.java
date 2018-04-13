@@ -13,8 +13,6 @@ import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 
 import suomicraftpe.mobplugin.MobPlugin;
-import suomicraftpe.mobplugin.entities.BaseEntity;
-import suomicraftpe.mobplugin.entities.animal.Animal;
 import suomicraftpe.mobplugin.entities.monster.FlyingMonster;
 import suomicraftpe.mobplugin.entities.projectile.BlueWitherSkull;
 import suomicraftpe.mobplugin.utils.Utils;

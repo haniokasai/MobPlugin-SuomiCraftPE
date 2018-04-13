@@ -41,7 +41,7 @@ public class AutoSpawnTask implements Runnable {
         prepareMaxSpawns();
         try {
             prepareSpawnerClasses();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 

@@ -2,21 +2,14 @@ package suomicraftpe.mobplugin.entities.monster.walking;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
-import cn.nukkit.entity.projectile.EntityArrow;
-import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
-import cn.nukkit.event.entity.EntityShootBowEvent;
-import cn.nukkit.event.entity.ProjectileLaunchEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemBow;
 import cn.nukkit.level.Level;
-import cn.nukkit.level.Location;
 import cn.nukkit.level.format.FullChunk;
-import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.MobEquipmentPacket;
 
-import suomicraftpe.mobplugin.MobPlugin;
 import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
 import suomicraftpe.mobplugin.utils.Utils;
 
@@ -85,7 +78,6 @@ public class Stray extends WalkingMonster {
 
     @Override
     public void attackEntity(Entity player) {
-	return;
     }
 
     @Override

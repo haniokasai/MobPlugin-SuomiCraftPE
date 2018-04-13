@@ -13,8 +13,6 @@ import java.util.List;
 
 public class SpawnTask implements Runnable {
 
-    private Server              server           = null;
-
     private static final int    MAX_SPAWN_RADIUS = 10;
 
     private static final int    MIN_SPAWN_RADIUS = 3;
@@ -22,7 +20,7 @@ public class SpawnTask implements Runnable {
     private MobPlugin           plugin = null;
 
     public SpawnTask(MobPlugin plugin) {
-        this.server = Server.getInstance();
+        Server server = Server.getInstance();
         this.plugin = plugin;
     }
 
@@ -68,11 +66,10 @@ public class SpawnTask implements Runnable {
 
         int x = startEast ? Utils.rand(minSpawnX1, maxSpawnX1) : Utils.rand(minSpawnX2, maxSpawnX2);
         int z = startNorth ? Utils.rand(minSpawnZ1, maxSpawnZ1) : Utils.rand(minSpawnZ2, maxSpawnZ2);
-        int y = spawnZ;
 
         while (!found && findTries < maxFindingTries) {
-            int blockId = level.getBlockIdAt(x, y, z);
-            if (isBlockAllowed(blockId, notAllowedBlockIds) && isEnoughAirAboveBlock(x, y, z, minAirAboveSpawnBlock, level)) {
+            int blockId = level.getBlockIdAt(x, spawnZ, z);
+            if (isBlockAllowed(blockId, notAllowedBlockIds) && isEnoughAirAboveBlock(x, spawnZ, z, minAirAboveSpawnBlock, level)) {
                 found = true;
             }
             if (!found) {
@@ -82,7 +79,7 @@ public class SpawnTask implements Runnable {
         }
 
         if (found) {
-            spawnPosition = new Position (x, y, z);
+            spawnPosition = new Position (x, spawnZ, z);
         }
 
         return spawnPosition;

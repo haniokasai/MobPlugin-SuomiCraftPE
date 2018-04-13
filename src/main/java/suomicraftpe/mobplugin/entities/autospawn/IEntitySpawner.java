@@ -9,12 +9,12 @@ import java.util.List;
 
 public interface IEntitySpawner {
 
-    public void spawn(List<Player> onlinePlayers);
+    void spawn(List<Player> onlinePlayers);
 
-    public SpawnResult spawn(IPlayer iPlayer, Position pos, Level level);
+    SpawnResult spawn(IPlayer iPlayer, Position pos, Level level);
 
-    public int getEntityNetworkId ();
+    int getEntityNetworkId();
 
-    public String getEntityName ();
+    String getEntityName();
 
 }

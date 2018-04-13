@@ -8,9 +8,7 @@ import cn.nukkit.item.Item;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 
-import suomicraftpe.mobplugin.MobPlugin;
 import suomicraftpe.mobplugin.entities.monster.FlyingMonster;
-import suomicraftpe.mobplugin.utils.Utils;
 
 import java.util.HashMap;
 

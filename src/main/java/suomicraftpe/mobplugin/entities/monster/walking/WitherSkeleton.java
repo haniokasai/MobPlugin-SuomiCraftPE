@@ -4,15 +4,10 @@ import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.event.entity.EntityDamageEvent;
-import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemSwordStone;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.network.protocol.MobEquipmentPacket;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import suomicraftpe.mobplugin.entities.monster.WalkingMonster;
 

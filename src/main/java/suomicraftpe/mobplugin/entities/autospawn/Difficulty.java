@@ -7,7 +7,7 @@ public enum Difficulty {
 
     private int difficulty;
 
-    private Difficulty (int difficulty) {
+    Difficulty(int difficulty) {
         this.difficulty = difficulty;
     }
 

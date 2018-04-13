@@ -2,11 +2,9 @@ package suomicraftpe.mobplugin;
 
 import cn.nukkit.IPlayer;
 import cn.nukkit.Player;
-import cn.nukkit.Server;
 import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockAir;
 import cn.nukkit.blockentity.BlockEntity;
-import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.item.EntityItem;
@@ -27,10 +25,8 @@ import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.nbt.tag.DoubleTag;
 import cn.nukkit.nbt.tag.FloatTag;
 import cn.nukkit.nbt.tag.ListTag;
-import cn.nukkit.network.protocol.EntityEventPacket;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
-import cn.nukkit.utils.DyeColor;
 import suomicraftpe.mobplugin.entities.BaseEntity;
 import suomicraftpe.mobplugin.entities.animal.flying.*;
 import suomicraftpe.mobplugin.entities.animal.jumping.Rabbit;
@@ -231,9 +227,7 @@ public class MobPlugin extends PluginBase implements Listener {
 
     public List<IPlayer> getAllRegisteredPlayers() {
         List<IPlayer> playerList = new ArrayList<>();
-        for (Player player : this.getServer().getOnlinePlayers().values()) {
-            playerList.add(player);
-        }
+        playerList.addAll(this.getServer().getOnlinePlayers().values());
         return playerList;
     }
 
