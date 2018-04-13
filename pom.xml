@@ -41,15 +41,17 @@
         </resources>
     </build>
     <repositories>
+        <repository>
+            <id>nukkit-repo</id>
+            <url>https://repo.nukkitx.com/main</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
-          <groupId>cn.nukkit</groupId>
-  				<artifactId>Nukkit</artifactId>
-  				<version>1.2</version>
-  				<optional>false</optional>
-  				<scope>system</scope>
-  				<systemPath>${basedir}/lib/Nukkit.jar</systemPath>
+            <groupId>cn.nukkit</groupId>
+            <artifactId>nukkit</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
