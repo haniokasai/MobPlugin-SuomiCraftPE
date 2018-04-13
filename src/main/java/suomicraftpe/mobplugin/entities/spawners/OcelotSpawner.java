@@ -4,7 +4,8 @@ import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
-import cn.nukkit.level.generator.biome.Biome;
+
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.utils.Config;
 import suomicraftpe.mobplugin.AutoSpawnTask;
 import suomicraftpe.mobplugin.entities.animal.walking.Ocelot;
@@ -28,7 +29,7 @@ public class OcelotSpawner extends AbstractEntitySpawner {
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
-        if (biomeId != Biome.JUNGLE) {
+        if (biomeId != EnumBiome.JUNGLE.biome.getId()) {
             result = SpawnResult.WRONG_BLOCK;
         } else if (blockId != Block.GRASS && blockId != Block.LEAVES) {
             result = SpawnResult.WRONG_BLOCK;

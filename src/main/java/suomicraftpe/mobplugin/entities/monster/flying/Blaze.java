@@ -10,8 +10,8 @@ import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.event.entity.ProjectileLaunchEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Location;
+import cn.nukkit.level.Sound;
 import cn.nukkit.level.format.FullChunk;
-import cn.nukkit.level.sound.LaunchSound;
 import cn.nukkit.math.BlockFace;
 import cn.nukkit.math.NukkitMath;
 import cn.nukkit.math.Vector2;
@@ -269,7 +269,7 @@ public class Blaze extends FlyingMonster {
                 fireball.kill();
             } else {
                 fireball.spawnToAll();
-                this.level.addSound(new LaunchSound(this), this.getViewers().values());
+                this.level.addSound(this.getLocation(), Sound.RANDOM_BOW);
             }
         }
     }

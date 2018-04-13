@@ -4,7 +4,8 @@ import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
-import cn.nukkit.level.generator.biome.Biome;
+
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.utils.Config;
 import suomicraftpe.mobplugin.entities.animal.walking.PolarBear;
 import suomicraftpe.mobplugin.AutoSpawnTask;
@@ -29,7 +30,7 @@ public class PolarBearSpawner extends AbstractEntitySpawner {
         int blockId = level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z);
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
-        if (biomeId != Biome.ICE_PLAINS) {
+        if (biomeId != EnumBiome.ICE_PLAINS.biome.getId()) {
             result = SpawnResult.WRONG_BLOCK;
         } else if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {
             result = SpawnResult.POSITION_MISMATCH;

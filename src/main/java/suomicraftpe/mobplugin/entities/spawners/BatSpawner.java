@@ -4,7 +4,8 @@ import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
-import cn.nukkit.level.generator.biome.Biome;
+
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.utils.Config;
 import suomicraftpe.mobplugin.AutoSpawnTask;
 import suomicraftpe.mobplugin.entities.animal.flying.Bat;
@@ -22,7 +23,7 @@ public class BatSpawner extends AbstractEntitySpawner {
 
         int biomeId = level.getBiomeId((int) pos.x, (int) pos.z);
 
-        if (biomeId == Biome.HELL) {
+        if (biomeId == EnumBiome.HELL.biome.getId()) {
             result = SpawnResult.WRONG_BLOCK;
         } else {
             this.spawnTask.createEntity(getEntityName(), pos.add(0, 1.3, 0));

@@ -5,8 +5,8 @@ import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityCreature;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.item.Item;
+import cn.nukkit.level.Sound;
 import cn.nukkit.level.format.FullChunk;
-import cn.nukkit.level.sound.CowMilkSound;
 import cn.nukkit.level.particle.ItemBreakParticle;
 import cn.nukkit.nbt.tag.CompoundTag;
 import suomicraftpe.mobplugin.entities.animal.WalkingAnimal;
@@ -67,7 +67,7 @@ public class Cow extends WalkingAnimal {
         if (item.equals(Item.get(Item.BUCKET,0),true)) {
             player.getInventory().removeItem(Item.get(Item.BUCKET,0,1));
             player.getInventory().addItem(Item.get(Item.BUCKET,1,1));
-            this.level.addSound(new CowMilkSound(this), this.getViewers().values());
+            this.level.addSound(this.getLocation(), Sound.MOB_COW_MILK);
             return true;
         }else if(item.equals(Item.get(Item.WHEAT,0)) && !this.isBaby()){
             player.getInventory().removeItem(Item.get(Item.WHEAT,0,1));

@@ -4,7 +4,8 @@ import cn.nukkit.IPlayer;
 import cn.nukkit.block.Block;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
-import cn.nukkit.level.generator.biome.Biome;
+
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.utils.Config;
 import suomicraftpe.mobplugin.AutoSpawnTask;
 import suomicraftpe.mobplugin.entities.autospawn.AbstractEntitySpawner;
@@ -25,7 +26,7 @@ public class WolfSpawner extends AbstractEntitySpawner {
 
         if (blockId != Block.GRASS) {
             result = SpawnResult.WRONG_BLOCK;
-        } else if (biomeId != Biome.FOREST && biomeId != Biome.BIRCH_FOREST && biomeId == Biome.TAIGA) {
+        } else if (biomeId != EnumBiome.FOREST.biome.getId() && biomeId != EnumBiome.BIRCH_FOREST.biome.getId() && biomeId == EnumBiome.TAIGA.biome.getId()) {
             result = SpawnResult.WRONG_BLOCK;
         } else if (pos.y > 127 || pos.y < 1 || level.getBlockIdAt((int) pos.x, (int) pos.y, (int) pos.z) == Block.AIR) {
             result = SpawnResult.POSITION_MISMATCH;
